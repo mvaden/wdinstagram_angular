@@ -1,0 +1,15 @@
+<h2>I'm the Posts index!</h2>
+
+<!-- Create grumble -->
+<button data-ng-hide="newPost" data-ng-click="newPost = !newPost">New grumble</button>
+<form data-ng-show="newPost" data-ng-submit="indexVm.create(); newPost = !newPost">
+  <input placeholder="Title" data-ng-model="indexVm.newPost.title" />
+  <input placeholder="Author name" data-ng-model="indexVm.newPost.authorName" />
+  <input placeholder="Photo URL" data-ng-model="indexVm.newPost.photoUrl" />
+  <textarea placeholder="Post content" data-ng-model="indexVm.newPost.content"></textarea>
+  <button type="submit">Create</button>
+</form>
+
+<div data-ng-repeat="post in indexVm.posts">
+  <p><a data-ui-sref="postShow({id: post.id})">{{post.title}}</a></p>
+</div>

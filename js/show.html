@@ -1,0 +1,18 @@
+<h1>Post Show</h1>
+<h2>{{showVm.post.title}}</h2>
+
+Author: <p>{{showVm.post.authorName}}</p>
+<img data-ng-src="{{showVm.post.photoUrl}}"></img>
+
+<p>{{showVm.grumble.content}}</p>
+
+<button data-ng-hide="editPost" data-ng-click="editPost = !editPost">Edit post</button>
+<form data-ng-show="editPost">
+  <input value="showVm.post.title" data-ng-model="showVm.post.title" />
+  <input value="showVm.post.authorName" data-ng-model="showVm.post.authorName" />
+  <input value="showVm.post.photoUrl" data-ng-model="showVm.post.photoUrl" />
+  <textarea value="showVm.post.content" data-ng-model="showVm.post.content"></textarea>
+  <button class="update" data-ng-click="showVm.update(); editPost = !editPost">Save</button>
+  <button data-ng-click='editPost = !editPost' class='cancel'>Cancel</button>
+  <button class="delete" data-ui-sref="postIndex" data-ng-click="showVm.delete()">Delete</button>
+</form>

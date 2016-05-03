@@ -15,7 +15,7 @@ function RouterFunction ($stateProvider){
   .state("postsIndex", {
     url: "/posts",
     templateUrl: "js/grumbles/index.html"
-    controller: "GrumbleIndexController",
+    controller: "PostIndexController",
     controllerAs: "PostIndexViewModel"
   })
   .state("postShow", {
